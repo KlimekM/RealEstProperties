@@ -4,5 +4,8 @@ angular.module("realEstProperties", ["ngRoute","realEstProperties.controllers", 
     .when("/", {
       templateUrl : "views/home.html",
       controller  : "mainCtrl"
+    })
+    .otherwise({
+      redirectTo: "/"
     });
 });
