@@ -1,4 +1,7 @@
 angular.module("realEstProperties.controllers", [])
 .controller("mainCtrl", function($scope, Properties) {
-  $scope.test = "TESTING";
+
+  Properties.fetchProperties().then(function() {
+    $scope.test = "fetched";
+  })
 });
