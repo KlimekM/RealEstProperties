@@ -3,4 +3,6 @@ angular.module("realEstProperties.services", [])
   var o = {
     data: [],
   }
+
+  return o;
 });
