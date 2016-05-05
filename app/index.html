@@ -2,11 +2,12 @@
   <head>
     <title>RealEst Properties</title>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.js"></script>
     <script src="javascripts/app.js"></script>
+    <script src="javascripts/controllers.js"></script>
+    <script src="javascripts/services.js"></script>
   </head>
-  <body ng-app="realEstProperties" ng-controller="MainCtrl">
-    <div>
-      {{test}}
-    </div>
+  <body ng-app="realEstProperties" ng-controller="mainCtrl">
+    <div ng-view></div>
   </body>
 </html>
