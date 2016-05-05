@@ -10,7 +10,6 @@ angular.module("realEstProperties.services", [])
       url: "https://buildout.com/api/v1/KEY/properties.json?limit=20"
     }).success(function(responseData) {
       o.listings = responseData.properties;
-      console.log(o.listings);
     });
   }
 
