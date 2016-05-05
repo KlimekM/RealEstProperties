@@ -1,6 +1,11 @@
-angular.module("realEstProperties", [])
-.controller("MainCtrl", [
-"$scope",
-function($scope){
-  $scope.test = "Hello world!";
-}]);
+angular.module("realEstProperties", ["ngRoute","realEstProperties.controllers", "realEstProperties.services"])
+.config(function($routeProvider) {
+  $routeProvider
+    .when("/", {
+      templateUrl : "views/home.html",
+      controller  : "mainCtrl"
+    })
+    .otherwise({
+      redirectTo: "/"
+    });
+});
