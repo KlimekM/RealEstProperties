@@ -5,4 +5,10 @@ angular.module("realEstProperties.controllers", [])
     $scope.listings = Properties.listings;
     console.log($scope.listings);
   })
+
+  $scope.showListing = function(index) {
+    $scope.currentListing = $scope.listings[index]
+    console.log($scope.currentListing);
+  }
+
 });
