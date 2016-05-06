@@ -5,6 +5,10 @@ angular.module("realEstProperties", ["ngRoute","realEstProperties.controllers", 
       templateUrl : "views/home.html",
       controller  : "mainCtrl"
     })
+    .when("/listings/:listingId", {
+      templateUrl : "views/listing.html",
+      controller  : "mainCtrl"
+    })
     .otherwise({
       redirectTo: "/"
     });
