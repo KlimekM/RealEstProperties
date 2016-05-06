@@ -10,6 +10,10 @@ angular.module("realEstProperties.controllers", [])
     $location.path("/listings/"+ listingId)
   }
 
+  $scope.goHome = function() {
+    $location.path("/");
+  }
+
   $scope.showListing = function(index) {
     $scope.currentListing = $scope.listings[index]
     $scope.changePath($scope.currentListing.id);
