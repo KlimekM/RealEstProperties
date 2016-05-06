@@ -5,9 +5,14 @@
 </div>
 
 <div class="container">
-  <div class="row">
-    <div class="col-md-4" ng-repeat="listing in listings">
-      {{listing.address}}
+  <div class="row" ng-repeat="listing in listings">
+    <div class="col-md-2"></div>
+      <img class="small-photo" ng-src="{{listing.photos[0].url}}">
+    <div class="col-md-8">
+      <h3>{{listing.address}}</h3>
+      <h3>{{listing.city}}, {{listing.state}} {{listing.zip}}</h3>
+      <h3 ng-if="listing.sale_price_dollars == null">Sale Price: N/A</h3>
+      <h3 ng-if="listing.sale_price_dollars != null">Sale Price: ${{listing.sale_price_dollars}}</h3>
     </div>
   </div>
 </div>

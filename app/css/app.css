@@ -8,3 +8,12 @@
   color: white;
   text-align: center;
 }
+
+.small-photo {
+  width: 150px;
+  height: 150px;
+}
+
+.row {
+  border: 1px solid black;
+}
