@@ -1,7 +1,22 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" ng-click="goHome()">RealEst Properties</a>
+    </div>
+  </div>
+</nav>
+
 <div class="jumbotron">
   <div class="container">
     <h1 id="description">Below are the details for this listing.</h1>
   </div>
 </div>
 
-<div>HERE!</div>
+<div class="container">
+  <div class="row" ng-click="printListing()">
+    <div class="col-md-4"><img class="small-photo" ng-src="{{Properties.currentListing.photos[0].url}}"></div>
+    <div class="col-md-8">
+      <h3>{{Properties.currentListing.address}}</h3>
+    </div>
+  </div>
+</div>

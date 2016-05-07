@@ -8,6 +8,7 @@ angular.module("realEstProperties.controllers", [])
 
   $scope.changePath = function(listingId) {
     $location.path("/listings/"+ listingId)
+    $scope.currentListing = Properties.currentListing;
   }
 
   $scope.goHome = function() {
@@ -16,8 +17,17 @@ angular.module("realEstProperties.controllers", [])
 
   $scope.showListing = function(index) {
     $scope.currentListing = $scope.listings[index]
+    Properties.currentListing = $scope.currentListing;
+    console.log("PROPERTIES HERE");
+    console.log(Properties.currentListing);
     $scope.changePath($scope.currentListing.id);
     console.log($scope.currentListing);
+  }
+
+  $scope.printListing = function() {
+    console.log("HERE");
+    console.log(Properties.currentListing);
+    console.log(Properties.currentListing.address);
   }
 
 });
