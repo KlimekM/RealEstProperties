@@ -7,7 +7,7 @@ angular.module("realEstProperties", ["ngRoute","realEstProperties.controllers", 
     })
     .when("/listings/:listingId", {
       templateUrl : "views/listing.html",
-      controller  : "mainCtrl"
+      controller  : "listingCtrl"
     })
     .otherwise({
       redirectTo: "/"

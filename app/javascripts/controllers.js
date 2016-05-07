@@ -11,10 +11,6 @@ angular.module("realEstProperties.controllers", [])
     $scope.currentListing = Properties.currentListing;
   }
 
-  $scope.goHome = function() {
-    $location.path("/");
-  }
-
   $scope.showListing = function(index) {
     $scope.currentListing = $scope.listings[index]
     Properties.currentListing = $scope.currentListing;
@@ -28,6 +24,13 @@ angular.module("realEstProperties.controllers", [])
     console.log("HERE");
     console.log(Properties.currentListing);
     console.log(Properties.currentListing.address);
+  }
+})
+
+.controller("listingCtrl", function($scope, $location, Properties) {
+
+  $scope.goHome = function() {
+    $location.path("/");
   }
 
 });
