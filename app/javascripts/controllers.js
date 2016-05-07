@@ -20,6 +20,8 @@ angular.module("realEstProperties.controllers", [])
 
   $scope.currentListing = Properties.getCurrentListing();
 
+  $scope.photos = $scope.currentListing.photos
+
   $scope.goHome = function() {
     $location.path("/");
   }
