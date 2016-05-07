@@ -3,7 +3,6 @@ angular.module("realEstProperties.controllers", [])
 
   Properties.fetchProperties().then(function() {
     $scope.listings = Properties.listings;
-    console.log($scope.listings);
   })
 
   $scope.changePath = function(listingId) {
@@ -12,8 +11,16 @@ angular.module("realEstProperties.controllers", [])
 
   $scope.showListing = function(index) {
     $scope.currentListing = $scope.listings[index]
+    Properties.currentListing = $scope.currentListing;
     $scope.changePath($scope.currentListing.id);
-    console.log($scope.currentListing);
   }
+})
 
+.controller("listingCtrl", function($scope, $location, Properties) {
+
+  $scope.currentListing = Properties.getCurrentListing();
+
+  $scope.goHome = function() {
+    $location.path("/");
+  }
 });
