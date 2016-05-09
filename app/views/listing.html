@@ -8,7 +8,8 @@
 
 <div class="jumbotron">
   <div class="container">
-    <h1 id="description">Below are the details for this listing.</h1>
+    <h1 class="description">{{currentListing.address}}</h1>
+    <h1 class="description">{{currentListing.city}}, {{currentListing.state}} {{currentListing.zip}}</h1>
   </div>
 </div>
 
@@ -49,16 +50,15 @@
       <img class="little-photo" ng-src="{{photo.url}}" ng-click="makeLargeImage($index)">
     </div>
   </div>
-<!--   <div ng-repeat="photo in photos">
-    <img class="little-photo" ng-src="{{photo.url}}" ng-click="makeLargeImage($index)">
-  </div> -->
 </div>
 
 <div class="container">
   <div class="row">
-    <div class="col-md-4"><img class="small-photo" ng-src="{{currentListing.photos[0].url}}"></div>
-    <div class="col-md-8">
-      <h3>{{currentListing.address}}</h3>
+    <div class="col-md-12">
+      <h2>Property details:</h2>
+      <p>{{currentListing.address}}</p>
+      <p>{{currentListing.city}}, {{currentListing.state}} {{currentListing.zip}}</p>
+
     </div>
   </div>
 </div>

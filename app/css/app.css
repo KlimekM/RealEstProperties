@@ -7,6 +7,7 @@
 #description {
   color: white;
   text-align: center;
+  vertical-align: middle;
 }
 
 .small-photo {
@@ -24,7 +25,7 @@
   height: 300px;
 }
 
-.row {
+.listing {
   border: 1px solid black;
 }
 
