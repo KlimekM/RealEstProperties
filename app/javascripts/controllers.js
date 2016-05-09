@@ -1,4 +1,12 @@
-angular.module("realEstProperties.controllers", [])
+angular.module("realEstProperties.controllers", ["uiGmapgoogle-maps"])
+.config(function(uiGmapGoogleMapApiProvider) {
+    uiGmapGoogleMapApiProvider.configure({
+        key: "AIzaSyDeoXJYortVfEO5sGyfRpO5odY0E6Jzhxs",
+        v: '3.20',
+        libraries: 'weather,geometry,visualization'
+    });
+})
+
 .controller("mainCtrl", function($scope, $location, Properties) {
 
   Properties.fetchProperties().then(function() {
@@ -16,13 +24,23 @@ angular.module("realEstProperties.controllers", [])
   }
 })
 
-.controller("listingCtrl", function($scope, $location, Properties) {
+.controller("listingCtrl", function($scope, $location, Properties, uiGmapGoogleMapApi) {
 
   $scope.currentListing = Properties.getCurrentListing();
 
   $scope.photos = $scope.currentListing.photos;
 
   $scope.selectedImg = $scope.currentListing.photos[0];
+
+  $scope.map = { center: { latitude: $scope.currentListing.latitude, longitude: $scope.currentListing.longitude }, zoom: 12 }
+
+  $scope.marker = {
+    id: 0,
+    coords: {
+      latitude: $scope.currentListing.latitude,
+      longitude: $scope.currentListing.longitude
+    }
+  }
 
   $scope.makeLargeImage = function(index) {
     $scope.selectedImg = $scope.currentListing.photos[index];
