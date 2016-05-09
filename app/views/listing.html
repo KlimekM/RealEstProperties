@@ -12,10 +12,17 @@
   </div>
 </div>
 
-<div class="container">
-  <img class="small-photo" ng-repeat="photo in photos" ng-src="{{ photo.url }}">
+<!-- Experiment with slider. -->
+<!-- <div class="container">
+  <div>
+    <carousel interval="myInterval">
+      <slide ng-repeat="photo in photos" active="slide.active">
+        <img ng-src="{{ photo.url }}">
+      </slide>
+    </carousel>
+  </div>
 </div>
-
+ -->
 <div class="container">
   <div class="row">
     <div class="col-md-4"><img class="small-photo" ng-src="{{currentListing.photos[0].url}}"></div>
