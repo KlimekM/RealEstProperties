@@ -20,7 +20,13 @@ angular.module("realEstProperties.controllers", [])
 
   $scope.currentListing = Properties.getCurrentListing();
 
-  $scope.photos = $scope.currentListing.photos
+  $scope.photos = $scope.currentListing.photos;
+
+  $scope.selectedImg = $scope.currentListing.photos[0];
+
+  $scope.makeLargeImage = function(index) {
+    $scope.selectedImg = $scope.currentListing.photos[index];
+  }
 
   $scope.goHome = function() {
     $location.path("/");
