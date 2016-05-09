@@ -1,7 +1,7 @@
 angular.module("realEstProperties.controllers", ["uiGmapgoogle-maps"])
 .config(function(uiGmapGoogleMapApiProvider) {
     uiGmapGoogleMapApiProvider.configure({
-        key: "AIzaSyDeoXJYortVfEO5sGyfRpO5odY0E6Jzhxs",
+        key: "KEY",
         v: '3.20',
         libraries: 'weather,geometry,visualization'
     });
