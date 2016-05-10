@@ -23,9 +23,5 @@ angular.module("realEstProperties.services", [])
     });
   }
 
-  o.getCurrentListing = function() {
-    return o.currentListing;
-  }
-
   return o;
 })
