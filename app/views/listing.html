@@ -8,15 +8,57 @@
 
 <div class="jumbotron">
   <div class="container">
-    <h1 id="description">Below are the details for this listing.</h1>
+    <h1 class="description">{{currentListing.address}}</h1>
+    <h1 class="description">{{currentListing.city}}, {{currentListing.state}} {{currentListing.zip}}</h1>
+  </div>
+</div>
+
+<!-- Experiment with slider. -->
+<!-- <div class="container">
+  <div>
+    <carousel interval="myInterval">
+      <slide ng-repeat="photo in photos" active="slide.active">
+        <img ng-src="{{ photo.url }}">
+      </slide>
+    </carousel>
+  </div>
+</div> -->
+<!--
+<div class="carousel">
+  <div class="carousel-inner">
+    <div class="item" ng-class="{active:!$index}" ng-repeat="photo in photos">
+      <img src="{{ photo.url }}" class="img-responsive">
+    </div>
+  </div>
+  <a class="carousel-control right" href="#slider" data-slide="next"></a>
+</div>
+ -->
+<div class="container">
+  <div class="photos-container">
+    <img id="large-photo" ng-src="{{selectedImg.url}}">
+  </div>
+  <div class="map-container">
+    <div class="angular-google-map-container">
+      <ui-gmap-google-map center="map.center" zoom="map.zoom">
+        <ui-gmap-marker coords="marker.coords" idkey="marker.id">
+        </ui-gmap-marker>
+      </ui-gmap-google-map>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-1" ng-repeat="photo in photos">
+      <img class="little-photo" ng-src="{{photo.url}}" ng-click="makeLargeImage($index)">
+    </div>
   </div>
 </div>
 
 <div class="container">
   <div class="row">
-    <div class="col-md-4"><img class="small-photo" ng-src="{{currentListing.photos[0].url}}"></div>
-    <div class="col-md-8">
-      <h3>{{currentListing.address}}</h3>
+    <div class="col-md-12">
+      <h2>Property details:</h2>
+      <p>{{currentListing.address}}</p>
+      <p>{{currentListing.city}}, {{currentListing.state}} {{currentListing.zip}}</p>
+
     </div>
   </div>
 </div>
