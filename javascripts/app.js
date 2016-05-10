@@ -1,5 +1,5 @@
 angular.module("realEstProperties", ["ngRoute","realEstProperties.controllers", "realEstProperties.services"])
-.config(function($routeProvider) {
+.config(function($httpProvider, $routeProvider) {
   $routeProvider
     .when("/", {
       templateUrl : "views/home.html",
