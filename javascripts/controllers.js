@@ -42,7 +42,7 @@ angular.module("realEstProperties.controllers", ["uiGmapgoogle-maps"])
       }
     }
   })
-  // $scope.currentListing = Properties.getCurrentListing();
+
   $scope.makeLargeImage = function(index) {
     $scope.selectedImg = $scope.currentListing.photos[index];
   }
