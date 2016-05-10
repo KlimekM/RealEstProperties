@@ -35,10 +35,16 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <h2>Property details:</h2>
-      <p>{{currentListing.address}}</p>
-      <p>{{currentListing.city}}, {{currentListing.state}} {{currentListing.zip}}</p>
-
+      <h3>Property details:</h3>
+      <p>Description: {{currentListing.lease_description}}</p>
+      <p>County: {{currentListing.county}}</p>
+      <p>Year built: {{currentListing.year_built}}</p>
+      <p>Lot size: {{currentListing.lot_size_acres}} acres</p>
+      <p>Cross streets: {{currentListing.cross_streets}}</p>
+      <p>Location description: {{currentListing.location_description}}</p>
+      <p ng-if="currentListing.sale_price_dollars != null">Sale Price: ${{currentListing.sale_price_dollars}}</p>
+      <p ng-if="currentListing.sale_price_dollars == null">Sale Price: Please see the external listing.</p>
+      <p ng-if="currentListing.lease_listing_url != null">External listing: <a href="{{currentListing.lease_listing_url}}">{{currentListing.lease_listing_url}}</a></p>
     </div>
   </div>
 </div>
