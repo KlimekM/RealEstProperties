@@ -43,3 +43,8 @@
   height: 300px;
   width: 100%;
 }
+
+h1.address-header {
+  color: white;
+  text-align: center;
+}

@@ -8,31 +8,11 @@
 
 <div class="jumbotron">
   <div class="container">
-    <h1 class="description">{{currentListing.address}}</h1>
-    <h1 class="description">{{currentListing.city}}, {{currentListing.state}} {{currentListing.zip}}</h1>
+    <h1 class="address-header">{{currentListing.address}}</h1>
+    <h1 class="address-header">{{currentListing.city}}, {{currentListing.state}} {{currentListing.zip}}</h1>
   </div>
 </div>
 
-<!-- Experiment with slider. -->
-<!-- <div class="container">
-  <div>
-    <carousel interval="myInterval">
-      <slide ng-repeat="photo in photos" active="slide.active">
-        <img ng-src="{{ photo.url }}">
-      </slide>
-    </carousel>
-  </div>
-</div> -->
-<!--
-<div class="carousel">
-  <div class="carousel-inner">
-    <div class="item" ng-class="{active:!$index}" ng-repeat="photo in photos">
-      <img src="{{ photo.url }}" class="img-responsive">
-    </div>
-  </div>
-  <a class="carousel-control right" href="#slider" data-slide="next"></a>
-</div>
- -->
 <div class="container">
   <div class="photos-container">
     <img id="large-photo" ng-src="{{selectedImg.url}}">
@@ -46,7 +26,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-1" ng-repeat="photo in photos">
+    <div class="col-md-1 col-sm-2 col-xs-2" ng-repeat="photo in photos">
       <img class="little-photo" ng-src="{{photo.url}}" ng-click="makeLargeImage($index)">
     </div>
   </div>
@@ -54,11 +34,17 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
-      <h2>Property details:</h2>
-      <p>{{currentListing.address}}</p>
-      <p>{{currentListing.city}}, {{currentListing.state}} {{currentListing.zip}}</p>
-
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <h3>Property details:</h3>
+      <p>Description: {{currentListing.lease_description}}</p>
+      <p>County: {{currentListing.county}}</p>
+      <p>Year built: {{currentListing.year_built}}</p>
+      <p>Lot size: {{currentListing.lot_size_acres}} acres</p>
+      <p>Cross streets: {{currentListing.cross_streets}}</p>
+      <p>Location description: {{currentListing.location_description}}</p>
+      <p ng-if="currentListing.sale_price_dollars != null">Sale Price: ${{currentListing.sale_price_dollars}}</p>
+      <p ng-if="currentListing.sale_price_dollars == null">Sale Price: Please see the external listing.</p>
+      <p ng-if="currentListing.lease_listing_url != null">External listing: <a href="{{currentListing.lease_listing_url}}">{{currentListing.lease_listing_url}}</a></p>
     </div>
   </div>
 </div>
