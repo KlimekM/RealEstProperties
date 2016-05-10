@@ -26,7 +26,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-1" ng-repeat="photo in photos">
+    <div class="col-md-1 col-sm-2 col-xs-2" ng-repeat="photo in photos">
       <img class="little-photo" ng-src="{{photo.url}}" ng-click="makeLargeImage($index)">
     </div>
   </div>
@@ -34,7 +34,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12 col-sm-12 col-xs-12">
       <h3>Property details:</h3>
       <p>Description: {{currentListing.lease_description}}</p>
       <p>County: {{currentListing.county}}</p>
