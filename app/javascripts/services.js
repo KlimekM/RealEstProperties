@@ -2,7 +2,8 @@ angular.module("realEstProperties.services", [])
 .factory("Properties", function($http) {
   var o = {
     listings: [],
-    currentListing: {}
+    currentListing: {},
+    listingId: ""
   }
 
   o.fetchProperties = function() {
