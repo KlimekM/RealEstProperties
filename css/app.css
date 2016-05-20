@@ -18,6 +18,7 @@
 .little-photo {
   width: 100px;
   height: 100px;
+  cursor: pointer;
 }
 
 #large-photo {
@@ -26,7 +27,9 @@
 }
 
 .listing {
-  border: 1px solid black;
+  border-top: 1px solid black;
+  font-size: 1.5em;
+  cursor: pointer;
 }
 
 .photos-container {
@@ -47,4 +50,8 @@
 h1.address-header {
   color: white;
   text-align: center;
+}
+
+.navbar-brand {
+  cursor: pointer;
 }
