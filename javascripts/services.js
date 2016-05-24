@@ -5,6 +5,7 @@ angular.module("realEstProperties.services", [])
     currentListing: {}
   }
 
+  // Fetching data from the Buildout API:
   // o.fetchProperties = function() {
   //   return $http({
   //     method: "GET",
@@ -13,6 +14,8 @@ angular.module("realEstProperties.services", [])
   //     o.listings = responseData.properties;
   //   });
   // }
+
+  // Fetching data from the locations.json file:
   o.fetchProperties = function() {
     return $http.get("locations.json")
     .success(function(responseData) {
@@ -20,14 +23,15 @@ angular.module("realEstProperties.services", [])
     })
   }
 
-  o.fetchSingleProperty = function(listingId) {
-    return $http({
-      method: "GET",
-      url: "https://crossorigin.me/https://buildout.com/api/v1/KEY/properties/" + listingId + ".json",
-    }).success(function(responseData) {
-      o.currentListing = responseData.property
-    });
-  }
+  // Fetching a single property from the Buildout API:
+  // o.fetchSingleProperty = function(listingId) {
+  //   return $http({
+  //     method: "GET",
+  //     url: "https://crossorigin.me/https://buildout.com/api/v1/KEY/properties/" + listingId + ".json",
+  //   }).success(function(responseData) {
+  //     o.currentListing = responseData.property
+  //   });
+  // }
 
   return o;
 })
