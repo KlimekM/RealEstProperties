@@ -5,13 +5,19 @@ angular.module("realEstProperties.services", [])
     currentListing: {}
   }
 
+  // o.fetchProperties = function() {
+  //   return $http({
+  //     method: "GET",
+  //     url: "https://crossorigin.me/https://buildout.com/api/v1/KEY/properties.json?limit=20",
+  //   }).success(function(responseData) {
+  //     o.listings = responseData.properties;
+  //   });
+  // }
   o.fetchProperties = function() {
-    return $http({
-      method: "GET",
-      url: "https://crossorigin.me/https://buildout.com/api/v1/KEY/properties.json?limit=20",
-    }).success(function(responseData) {
+    return $http.get("locations.json")
+    .success(function(responseData) {
       o.listings = responseData.properties;
-    });
+    })
   }
 
   o.fetchSingleProperty = function(listingId) {
